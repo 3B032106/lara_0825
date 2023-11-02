@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title','')
+@section('title','Clean Blog - Sample Post')
 
 @section('content')
     <!-- Page Header-->
