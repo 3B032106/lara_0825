@@ -18,10 +18,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
 
     $post = Post::find(1);
-    $post->title = 'saved title';
-    $post->content = 'saved content';
-    $post->save();
-    return 'Saved!';
+    $post->delete();
+
+    Post::destroy(2);
+
+    Post::destroy(3, 5, 7);
+
+    return 'Deleted!';
 
 });
 
