@@ -17,15 +17,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
 
-    //  $posts = Post::all();
-    //  dd($posts);
+    $post = Post::find(1);
+    $post->update([
+        'title'=>'updated title',
+        'content'=>'updated content',
+    ]);
+    return 'Updated!';
 
-    //  $post = Post::find(1);
-    //  dd($post);
-
-    $posts = Post::where('id','<','10')->orderBy('id','DESC')->get();
-    dd($posts);
-    
 });
 
 Route::get('posts',[PostController::class, 'index'])->name('posts.index');
