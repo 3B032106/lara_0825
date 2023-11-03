@@ -17,14 +17,17 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
 
-    $post = Post::find(1);
-    $post->delete();
+    //    $allPosts = Post::all();
+    //    dd($allPosts);
 
-    Post::destroy(2);
+    //    $featurePosts = Post::where('is_feature', true)->get();
+    //    dd($featurePosts);
 
-    Post::destroy(3, 5, 7);
+    //    $fourthPost = Post::find(4);
+    //    dd($fourthPost);
 
-    return 'Deleted!';
+    $lastPost = Post::orderBy('id','DESC')->first();
+    dd($lastPost);
 
 });
 
