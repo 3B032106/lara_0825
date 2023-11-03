@@ -16,19 +16,16 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    //return redirect(route('posts.index'));
-    //  $post = new Post();
-    //  $post->title="test_title";
-    //  $post->content="test_content";
-    //  $post->save();
 
-    Post::create([
-        'title'=>'test title2',
-        'content'=>'test content2',
-    ]);
+    //  $posts = Post::all();
+    //  dd($posts);
 
-    return 'Saved, OK!';
+    //  $post = Post::find(1);
+    //  dd($post);
 
+    $posts = Post::where('id','<','10')->orderBy('id','DESC')->get();
+    dd($posts);
+    
 });
 
 Route::get('posts',[PostController::class, 'index'])->name('posts.index');
